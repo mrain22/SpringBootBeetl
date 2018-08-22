@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>i18n</title>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+<h3>${i18n("login")}</h3>
+<h3>${i18n("name")}</h3>
+
+</body>
+<script>
+    $.ajax({
+        url:"/i18n",
+        type:"get",
+        success:function(response){
+            console.log(JSON.parse(response));
+            console.log(response);
+        },
+        error:function(response) {
+            console.log(response);
+        }
+    })
+</script>
+</html>
